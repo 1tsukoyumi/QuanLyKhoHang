@@ -17,7 +17,9 @@ public class MailServe
 
     public async Task<bool> SendOtpAsync(string email)
     {
+        //tạo mã otp
         string otp = new Random().Next(100000, 999999).ToString();
+        //thời gian otp có hiệu lực
         _otpStorage[email] = (otp, DateTime.UtcNow.AddMinutes(5));
 
         try
@@ -27,11 +29,18 @@ public class MailServe
                 smtp.Credentials = new NetworkCredential(_mailSettings.SenderMail, _mailSettings.SenderPass);
                 smtp.EnableSsl = true;
 
+                //lay thời gian
+                var time = DateTime.UtcNow;
+                var formatDateTime = time.ToString("dd/MM/yyyy HH:mm:ss");
+
                 var message = new MailMessage
                 {
                     From = new MailAddress(_mailSettings.SenderMail ?? throw new InvalidOperationException("SenderEmail is not configured."), "Quản lý kho hàng"),
                     Subject = "Yêu cầu mã OTP quên mật khẩu",
-                    Body = $"<p>Xin chào,</p><p>Mã OTP của bạn là: <strong>{otp}</strong></p><p><strong>Không</strong> chia sẻ mã này. Chúng tôi sẽ <strong>không bao giờ </strong>liên hệ với bạn để yêu cầu mã này. Nếu bạn không yêu cầu mã này, bạn không cần thực hiện thêm hành động nào nữa.</p><p>Cảm ơn,</p><p>Quản lý kho hàng</p>",
+                    Body = $"<p>Xin chào,</p><p>Mã OTP của bạn là: <strong>{otp}</strong></p>" +
+                            $"<p><strong>Không</strong> chia sẻ mã này. Chúng tôi sẽ <strong>không bao giờ </strong>liên hệ với bạn để yêu cầu mã này. Nếu bạn không yêu cầu mã này, bạn không cần thực hiện thêm hành động nào nữa.</p>" +
+                            $"<p>Mã chỉ có hiệu lực trong <strong>5 phút.</strong></p>" +
+                            $"<p>Thời gian nhận mã: {time}</p><p>Cảm ơn,</p><p>Quản lý kho hàng</p>",
                     IsBodyHtml = true,
                 };
                 message.To.Add(email);
