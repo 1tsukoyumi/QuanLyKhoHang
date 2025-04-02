@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using back_end.Entities;
 
 [Route("api/otp")]
@@ -13,7 +12,7 @@ public class OtpController : ControllerBase
         _emailService = emailService;
     }
 
-    [HttpPost("send")]
+    [HttpPost("send-email")]
     public async Task<IActionResult> SendOtp([FromBody] OtpRequest request)
     {
         if (string.IsNullOrEmpty(request.Email))
