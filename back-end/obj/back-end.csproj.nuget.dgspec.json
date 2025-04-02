@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "H:\\CuoiKy\\back-end\\back-end.csproj": {}
+    "D:\\DoAnTotNghiep\\QuanLyKhoHang\\back-end\\back-end.csproj": {}
   },
   "projects": {
-    "H:\\CuoiKy\\back-end\\back-end.csproj": {
+    "D:\\DoAnTotNghiep\\QuanLyKhoHang\\back-end\\back-end.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\CuoiKy\\back-end\\back-end.csproj",
+        "projectUniqueName": "D:\\DoAnTotNghiep\\QuanLyKhoHang\\back-end\\back-end.csproj",
         "projectName": "back-end",
-        "projectPath": "H:\\CuoiKy\\back-end\\back-end.csproj",
-        "packagesPath": "C:\\Users\\lhhon\\.nuget\\packages\\",
-        "outputPath": "H:\\CuoiKy\\back-end\\obj\\",
+        "projectPath": "D:\\DoAnTotNghiep\\QuanLyKhoHang\\back-end\\back-end.csproj",
+        "packagesPath": "C:\\Users\\MinhNhat\\.nuget\\packages\\",
+        "outputPath": "D:\\DoAnTotNghiep\\QuanLyKhoHang\\back-end\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lhhon\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MinhNhat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -93,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
